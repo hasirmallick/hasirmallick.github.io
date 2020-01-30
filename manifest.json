@@ -5,7 +5,7 @@
   "display": "standalone",
   "related_applications": [{
     "platform": "web"
- }]
+ }],
   "background_color": "#2f2f2f",
   "theme_color": "#2f2f2f",
   "orientation": "portrait-primary",
