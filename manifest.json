@@ -1,7 +1,7 @@
 {
   "name": "Hasir Mallick WebStore",
   "short_name": "HasirMallick",
-  "start_url": "https://hasirmallick.github.io",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#2f2f2f",
   "theme_color": "#2f2f2f",
