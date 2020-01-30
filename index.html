@@ -211,7 +211,13 @@ function myFunction() {
   }
 }
 </script>
-
+<!-- SERVICE WORKER -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
+<!-- SERVICE WORKER -->
 
 <script type="application/ld+json">
 {
