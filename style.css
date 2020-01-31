@@ -57,6 +57,9 @@ td {
 	color: grey;
 	font-size: 2.5vh;
 }
+.PWAnote{
+	display: none;
+}
 .navigat{
 	background: black;
 	display: grid;
@@ -235,5 +238,8 @@ td {
 	}
 	.arro{
 		display: none;
+	}
+	.PWAnote{
+		display: block;
 	}
 }
