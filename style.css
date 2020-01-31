@@ -225,7 +225,7 @@ td {
 @media (display-mode: standalone){
 	html,body{
 	height: 100%;
-	padding-top: 10px;
+	padding-top: 8px;
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	scroll-behavior: smooth;
