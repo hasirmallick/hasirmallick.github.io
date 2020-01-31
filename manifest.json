@@ -1,9 +1,9 @@
 {
   "name": "Book Store",
-  "short_name": "HasirMallick",
+  "short_name": "Book Store",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#89f7fe",
+  "background_color": "#2f2f2f",
   "theme_color": "#2f2f2f",
   "orientation": "portrait-primary",
   "icons": [

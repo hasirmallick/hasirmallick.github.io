@@ -16,7 +16,11 @@ td {
   text-align: left;
   padding: 8px;
 }
+.wrapper{
+	display: block;
+}
 .backg{
+	display: block;
 	height: 100%;
 	background: #2f2f2f;
 }
@@ -214,4 +218,22 @@ td {
 	margin: 20px;
 	}
 
+}
+@media (display-mode: standalone){
+	html,body{
+	height: 100%;
+	padding-top: 10px;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
+	}
+	.backg{
+		display: none;
+	}
+	.wrapper{
+		display: none;
+	}
+	.arro{
+		display: none;
+	}
 }
