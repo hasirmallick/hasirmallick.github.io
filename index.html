@@ -76,6 +76,29 @@
 	<a title="Books" href="#books"><h3 style="color: white;">Books</h3></a>
 	<a title="Contact" href="#contact"><h3 style="color: white;">Contact</h3></a>
 </div>
+<!-- SEARCH BAR -->
+
+<!-- input tag -->
+    <input id="searchbar" onkeyup="search_foods()" type="text"
+        name="search" placeholder="Search Your Food.."> 
+      
+    <!-- ordered list -->
+    <center>
+    <ul style="list-style-type:none;" class="lists" id='list'> 
+    	<dt style="text-align: center; font-size: 8; padding: 8px;"><em><b>Search for your Book</b></em></dt>
+        <li class="foods"><a href="#bookOne">Florence Nightangle</a></li> 
+        <li class="foods"><a href="#bookTwo">Musolman Achar Onusthan Utsav</a></li> 
+        <li class="foods"><a href="#bookThree">Onno Altamira</a></li> 
+        <li class="foods"><a href="#bookFour">Jibonanonder Bonolotara</a></li> 
+        <li class="foods"><a href="#bookFive">Hazrat Muhammad</a></li> 
+        <li class="foods"><a href="#bookSix">Rabindranather Banglay Gandhi</a></li> 
+    </ul> 
+	</center>
+      
+    <!-- linking javscript -->
+    <script src="books.js"></script> 
+
+<!-- SEARCH BAR -->
 <!--About-->
 <div id="about" class="about" style="font-family: 'Noto Sans', sans-serif;">
 		<h1 style="text-align: center;">লেখক পরিচিতি </h1>
@@ -103,7 +126,7 @@
 <div style="font-family: 'Noto Sans', sans-serif;" id="books" class="books">
 	<div class="inbooks">
 		<img alt="Florence Nightengele Bengali Book Cover" class="bcimg" src="1.jpg">
-		<h4 style="text-align: center;">ফ্লোরেন্স নাইটিংগেল (অনুবাদ/ হাসির মল্লিক)</h4><br>
+		<h4 id="bookOne" style="text-align: center;">ফ্লোরেন্স নাইটিংগেল (অনুবাদ/ হাসির মল্লিক)</h4><br>
 লেখকঃ প্যাম ব্রাউন।<br>
 প্রকাশকঃ ওরিয়েন্ট লংম্যান / ১৯৯৮<br> 
 মানবসেবায় নিয়োজিত বরেণ্য ব্যাক্তি ফ্লোরেন্স নাইটিংগেল  এর জীবনী।
@@ -112,7 +135,7 @@
 	</div>
 	<div class="inbooks">
 		<img alt="Musolman Achar Onusthan Utsab Cover" class="bcimg" src="2.jpg">
-		<h4 style="text-align: center;">মুসলমান আচার-অনুষ্ঠান-উৎসব </h4><br>
+		<h4 id="bookTwo" style="text-align: center;">মুসলমান আচার-অনুষ্ঠান-উৎসব </h4><br>
 প্রকাশকঃ বটতলা / ২০১৫<br> 
 আচার-অনুষ্ঠান-উৎসবগুলো মুসলমানের জীবনশৈলীর ধারক। আইডেন্টিটিও। এইসব পালনের ঐতিহ্য এক বর্ণময় সংস্কৃতিকে ফুটিয়ে তোলে। সমাজতাত্ত্বিক দৃষ্টিতে লেখক ইসলামি সংস্কৃতি ও মুসলিম জীবনকে চিত্রিত করেছেন মূলত অমুসলিম পাঠকদের জন্য। 
 <p><em>Order This book Online Here through foodyC.'s payment gateway. Powered by Razorpay. After you placed your order we will call you, and ship you your ordered book though post within 15 working days. If you don't get any response within 24 hours after placing your order online, then call +91-9062390204.</em></p> 
@@ -120,7 +143,7 @@
 	</div>
 	<div class="inbooks">
 		<img alt="Onno Altamira Cover" class="bcimg" src="3.jpg">
-		<h4 style="text-align: center;">অন্য আলতামিরা</h4><br>
+		<h4 id="bookThree" style="text-align: center;">অন্য আলতামিরা</h4><br>
 প্রকাশকঃ বটতলা / ২০১৫<br> 
 বাংলার বিখ্যাত বইপাড়া ও বাঙালির বিখ্যাত পড়া বই নিয়ে আলেখ্য।
 <p><em>Order This book Online Here through foodyC.'s payment gateway. Powered by Razorpay. After you placed your order we will call you, and ship you your ordered book though post within 15 working days. If you don't get any response within 24 hours after placing your order online, then call +91-9062390204.</em></p> 
@@ -128,7 +151,7 @@
 	</div>
 	<div class="inbooks">
 		<img alt="Jibonanonder Bonolotara Cover" class="bcimg" src="4.jpg">
-		<h4 style="text-align: center;">জীবনানন্দের বনলতারা</h4><br>
+		<h4 id="bookFour" style="text-align: center;">জীবনানন্দের বনলতারা</h4><br>
 প্রকাশকঃ বটতলা / ২০১৬<br> 
 জীবনানন্দের প্রেমের কবিতার একটি উল্লেখযোগ্য সংকলন।
 <p><em>Order This book Online Here through foodyC.'s payment gateway. Powered by Razorpay. After you placed your order we will call you, and ship you your ordered book though post within 15 working days. If you don't get any response within 24 hours after placing your order online, then call +91-9062390204.</em></p> 
@@ -136,7 +159,7 @@
 	</div>
 	<div class="inbooks">
 		<img alt="Hajrat Muhammad Cover" class="bcimg" src="5.jpg">
-		<h4 style="text-align: center;">হজরত মোহাম্মদ</h4><br>
+		<h4 id="bookFive" style="text-align: center;">হজরত মোহাম্মদ</h4><br>
 প্রকাশকঃ বটতলা / ২০১৭<br> 
 ১৯০৫ সালে বঙ্গভঙ্গের সময় রামপ্রাণ গুপ্ত লিখেছিলেন হজরত মোহাম্মদ বইটি। বর্তমানে  দুষ্প্রাপ্য বইটি এবার যথাযত সম্পাদনা ও টীকা সহযোগে নতুনভাবে নবিচর্চার মেধাবী বই হিসাবে প্রকাশিত হল। নবি ও তাঁর প্রবর্তিত ইসলামকে বুঝতে এই বইটি অপরিহার্য।
 <p><em>Order This book Online Here through foodyC.'s payment gateway. Powered by Razorpay. After you placed your order we will call you, and ship you your ordered book though post within 15 working days. If you don't get any response within 24 hours after placing your order online, then call +91-9062390204.</em></p> 
@@ -144,7 +167,7 @@
 	</div>
 	<div class="inbooks">
 		<img alt="Rabindranather Banglay Gandhi Cover" class="bcimg" src="6.jpg">
-		<h4 style="text-align: center;">রবীন্দ্রনাথের বাংলায় গান্ধী</h4><br>
+		<h4 id="bookSix" style="text-align: center;">রবীন্দ্রনাথের বাংলায় গান্ধী</h4><br>
 প্রকাশকঃ বটতলা / ২০১৮<br> 
 রবীন্দ্রনাথের বাংলায় গান্ধী এসেছেন তিনপর্বে, রবীন্দ্রনাথের সঙ্গে আলাপের আগে, রবীন্দ্রনাথের সঙ্গে আলাপের দীর্ঘ সময় পর্বে ও রবীন্দ্রনাথের মৃত্যুর পর। গান্ধীর পরিক্রমার পথে তাঁর বঙ্গদর্শনে এসে মিশেছে বাঙালি নানা ব্যক্তিত্বের নানা রং। এই বই তারই ভাষ্য।
 <p><em>Order This book Online Here through foodyC.'s payment gateway. Powered by Razorpay. After you placed your order we will call you, and ship you your ordered book though post within 15 working days. If you don't get any response within 24 hours after placing your order online, then call +91-9062390204.</em></p> 
