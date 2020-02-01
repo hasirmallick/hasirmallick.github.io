@@ -3,7 +3,7 @@ importScripts('/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('airhorner').then(function(cache) {
+   caches.open('Creativegun').then(function(cache) {
      return cache.addAll([
         '1.jpg',
         '2.jpg',
