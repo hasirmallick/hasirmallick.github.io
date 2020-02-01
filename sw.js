@@ -11,8 +11,17 @@ self.addEventListener('install', e => {
         '/',
 
         // CACHE 
-        'index.html',
-        'style.css',
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg',
+        'favicon-02.png',
+        'fbimg.jpg',
+        'hm.png',
+        'hasir mallick favicon.png',
+        'logo-02.svg'
         // CACHE
       ]).then(() => self.skipWaiting());
     })
