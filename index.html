@@ -237,13 +237,11 @@ function myFunction() {
 </script>
 <!-- SERVICE WORKER -->
 <script>
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-           .register('/sw.js')
-           .then(function() { console.log("Service Worker Registered");
-           	updateViaCache: 'none', 
-           });
-
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', {
+    updateViaCache: 'none',
+    // Optionally, set 'scope' here, if needed.
+  });
 }
 </script>
 <!-- SERVICE WORKER -->
