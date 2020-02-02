@@ -6,7 +6,7 @@ self.addEventListener('install', function(e) {
    caches.open('Creativegun').then(function(cache) {
      return cache.addAll([
         // '/',
-        'cache-polyfill.js',
+        '/cache-polyfill.js',
         '1.jpg',
         '2.jpg',
         '3.jpg',
