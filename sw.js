@@ -1,26 +1,40 @@
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite-dynamic').then(function(cache) {
-      return fetch(event.request).then(function(response) {
-        cache.put(event.request, response.clone());
-        return response;
-      });
-    })
-  );
+importScripts('/cache-polyfill.js');
+
+
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('Creativegun').then(function(cache) {
+     return cache.addAll([
+        // '/',
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg',
+        'favicon-02.png',
+        'fbimg.jpg',
+        'hm.png',
+        'hasir mallick favicon.png',
+        'logo-02.svg'
+     ]);
+   })
+ );
 });
 
+
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    // Try the cache
-    caches.match(event.request).then(function(response) {
-      // Fall back to network
-      return response || fetch(event.request);
-    }).catch(function() {
-      // If both fail, show a generic fallback:
-      return caches.match('/offline.html');
-      // However, in reality you'd have many different
-      // fallbacks, depending on URL & headers.
-      // Eg, a fallback silhouette image for avatars.
-    })
-  );
+
+console.log(event.request.url);
+
+event.respondWith(
+
+caches.match(event.request).then(function(response) {
+
+return response || fetch(event.request);
+
 })
+
+);
+
+});
