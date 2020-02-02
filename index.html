@@ -31,8 +31,6 @@
 	<meta property="og:image" content="fbimg.jpg" />
 </head>
 
-<script type="text/javascript" src="spin.js"></script>
-
 <!--right click disable-->
 <SCRIPT LANGUAGE="JavaScript">
 	function clickIE() {
@@ -241,7 +239,7 @@ function myFunction() {
 <script>
 var networkDataReceived = false;
 
-startSpinner();
+// startSpinner();
 
 // fetch fresh data
 var networkUpdate = fetch('/data.json').then(function(response) {
@@ -263,7 +261,7 @@ caches.match('/data.json').then(function(response) {
 }).catch(function() {
   // we didn't get cached data, the network is our last hope:
   return networkUpdate;
-}).catch(showErrorMessage).then(stopSpinner());</script>
+}).catch(showErrorMessage);</script>
 <!-- SERVICE WORKER -->
 
 <script type="application/ld+json">
