@@ -1,40 +1,25 @@
-importScripts('/cache-polyfill.js');
+var networkDataReceived = false;
 
+startSpinner();
 
-self.addEventListener('install', function(e) {
- e.waitUntil(
-   caches.open('Creativegun').then(function(cache) {
-     return cache.addAll([
-        // '/',
-        '1.jpg',
-        '2.jpg',
-        '3.jpg',
-        '4.jpg',
-        '5.jpg',
-        '6.jpg',
-        'favicon-02.png',
-        'fbimg.jpg',
-        'hm.png',
-        'hasir mallick favicon.png',
-        'logo-02.svg'
-     ]);
-   })
- );
+// fetch fresh data
+var networkUpdate = fetch('/data.json').then(function(response) {
+  return response.json();
+}).then(function(data) {
+  networkDataReceived = true;
+  updatePage(data);
 });
 
-
-self.addEventListener('fetch', function(event) {
-
-console.log(event.request.url);
-
-event.respondWith(
-
-caches.match(event.request).then(function(response) {
-
-return response || fetch(event.request);
-
-})
-
-);
-
-});
+// fetch cached data
+caches.match('/data.json').then(function(response) {
+  if (!response) throw Error("No data");
+  return response.json();
+}).then(function(data) {
+  // don't overwrite newer network data
+  if (!networkDataReceived) {
+    updatePage(data);
+  }
+}).catch(function() {
+  // we didn't get cached data, the network is our last hope:
+  return networkUpdate;
+}).catch(showErrorMessage).then(stopSpinner());
