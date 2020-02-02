@@ -19,6 +19,7 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'index.html';
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     // Setting {cache: 'reload'} in the new request will ensure that the response
