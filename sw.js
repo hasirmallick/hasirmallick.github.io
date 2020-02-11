@@ -1,13 +1,11 @@
 self.addEventListener('install', function(event) {
 	var offlineRequest = new Request('offline.html');
-  var offlineRequestCSS = new Request('style.css');
-  var offlineRequestLOGO = new Request('logo-02.svg');
 
   event.waitUntil(
     fetch(offlineRequest).then(function(response) {
       return caches.open('offline').then(function(cache) {
         console.log('[oninstall] Cached offline page', response.url);
-        return cache.put(offlineRequest, response, offlineRequestCSS, offlineRequestLOGO);
+        return cache.put(offlineRequest, response);
       });
     })
   );
