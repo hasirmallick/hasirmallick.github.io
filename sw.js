@@ -4,7 +4,7 @@ self.addEventListener('install', function(event) {
     fetch(offlineRequest).then(function(response) {
       return caches.open('offline').then(function(cache) {
         console.log('[oninstall] Cached offline page', response.url);
-        return cache.addAll([offlineRequest, response,
+        return cache.addAll([
         'https://fonts.googleapis.com/css?family=Roboto&display=swap',
         'https://fonts.googleapis.com/css?family=Noto+Sans&display=swap',
         'favicon-02.png',
