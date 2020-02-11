@@ -1,5 +1,4 @@
 importScripts('/cache-polyfill.js');
-  var offlineRequest = new Request('offline.html');
 
 
 self.addEventListener('install', function(e) {
@@ -22,6 +21,19 @@ self.addEventListener('install', function(e) {
 });
 
 
+
+
+self.addEventListener('install', function(event) {
+	var offlineRequest = new Request('offline.html');
+  event.waitUntil(
+    fetch(offlineRequest).then(function(response) {
+      return caches.open('offline').then(function(cache) {
+        console.log('[oninstall] Cached offline page', response.url);
+        return cache.put(offlineRequest, response);
+      });
+    })
+  );
+});
 self.addEventListener('fetch', function(event) {
 	 var request = event.request;
 	 if (request.method === 'GET') {
