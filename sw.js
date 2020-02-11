@@ -1,28 +1,29 @@
 self.addEventListener('install', function(event) {
-	var offlineRequest = new Request('offline.html');
-
   event.waitUntil(
-    fetch(offlineRequest).then(function(response) {
-      return caches.open('offline').then(function(cache) {
-        console.log('[oninstall] Cached offline page', response.url);
-        return cache.put(offlineRequest, response);
-      });
+    caches.open(Creativegun).then(function(cache) {
+      return cache.addAll(
+        [
+          '404.html',
+          'style.css',
+          'offline.html',
+          'logo-02.svg',
+        ]
+      );
     })
   );
 });
 self.addEventListener('fetch', function(event) {
-	 var request = event.request;
-	 if (request.method === 'GET') {
-	 	event.respondWith(
-      fetch(request).catch(function(error) {
-      	console.error(
-          '[onfetch] Failed. Serving cached offline fallback ' +
-          error
-        );
-        return caches.open('offline').then(function(cache) {
-          return cache.match('offline.html');
-        });
-      })
-    );
-  }
-  });
+  event.respondWith(
+    // Try the cache
+    caches.match(event.request).then(function(response) {
+      // Fall back to network
+      return response || fetch(event.request);
+    }).catch(function() {
+      // If both fail, show a generic fallback:
+      return caches.match('/offline.html');
+      // However, in reality you'd have many different
+      // fallbacks, depending on URL & headers.
+      // Eg, a fallback silhouette image for avatars.
+    })
+  );
+});
