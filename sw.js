@@ -1,16 +1,21 @@
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(
-        [
-          '404.html',
-          'style.css',
-          'offline.html',
-          'logo-02.svg',
-        ]
-      );
-    })
-  );
+importScripts('/cache-polyfill.js');
+
+
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('Creativegun').then(function(cache) {
+     return cache.addAll([
+        // '/',
+        '/cache-polyfill.js',
+        'favicon-02.png',
+        'fbimg.jpg',
+        'hm.png',
+        'hasir mallick favicon.png',
+        'logo-02.svg',
+        'offline.html'
+     ]);
+   })
+ );
 });
 self.addEventListener('fetch', function(event) {
   event.respondWith(
