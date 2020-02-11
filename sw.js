@@ -25,7 +25,8 @@ self.addEventListener('fetch', function(event) {
       return response || fetch(event.request);
     }).catch(function() {
       // If both fail, show a generic fallback:
-      return caches.match('/offline.html', '/style.css');
+      return caches.match('/offline.html');
+      return caches.match('/style.css');
       // However, in reality you'd have many different
       // fallbacks, depending on URL & headers.
       // Eg, a fallback silhouette image for avatars.
