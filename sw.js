@@ -1,18 +1,13 @@
 self.addEventListener('install', function(event) {
 	var offlineRequest = new Request('offline.html');
+  var offlineRequestCSS = new Request('style.css');
+  var offlineRequestLOGO = new Request('logo-02.svg');
+
   event.waitUntil(
     fetch(offlineRequest).then(function(response) {
       return caches.open('offline').then(function(cache) {
         console.log('[oninstall] Cached offline page', response.url);
-        return cache.addAll([
-        'https://fonts.googleapis.com/css?family=Roboto&display=swap',
-        'https://fonts.googleapis.com/css?family=Noto+Sans&display=swap',
-        'favicon-02.png',
-        'fbimg.jpg',
-        'hm.png',
-        'hasir mallick favicon.png',
-        'logo-02.svg'
-          ]);
+        return cache.put(offlineRequest, response, offlineRequestCSS, offlineRequestLOGO);
       });
     })
   );
