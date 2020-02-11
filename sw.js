@@ -1,6 +1,6 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(Creativegun).then(function(cache) {
+    caches.open(cacheName).then(function(cache) {
       return cache.addAll(
         [
           '404.html',
