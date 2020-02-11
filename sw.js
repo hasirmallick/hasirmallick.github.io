@@ -1,5 +1,5 @@
 self.addEventListener('install', function(event) {
-	var offlineRequest = new Request('offline.html', 'logo-02.svg');
+	var offlineRequest = new Request('offline.html');
   event.waitUntil(
     fetch(offlineRequest).then(function(response) {
       return caches.open('offline').then(function(cache) {
