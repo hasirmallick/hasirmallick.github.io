@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- ONESIGNAL -->
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9ce17f51-a84e-4886-b1af-48e208fdcfec",
+    });
+  });
+</script>
+<!-- ONESIGNAL -->	
+	<!-- Manifest -->
+	<link rel="manifest" href="manifest.json">		
+<!-- 	META DESCRIPTION -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
+	<meta name="description" content="foodyC. is a food community dedidcated in discovering amazing new good foods at different price points. Here it is their official lite APP.">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Titas Mallick">
+	<meta name="google" value="notranslate">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta property="og:url" content="foodyc.xyz" />
+	<meta property="og:type" content="Article" />
+	<meta property="og:title" content="foodyC. PWA" />
+	<meta property="og:description"
+		content="Check out brand new Reviews, Recipies and take part in different Contests. Welcome to the happy family of foodyC. This is the official PWA of  the site and it is not available without install." />
+	<meta property="og:image" content="fbimg.jpg" />
+	<script src="rightClickDisable.js"></script>
+<!-- 	META DECRIPTION -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>foodyC.</title>
+	<link rel="shortcut icon" alt="favicon for foodyC." type="image/png" href="icons/icon-01.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="PWA.css">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/f02fa89e5f.js" crossorigin="anonymous"></script>
+</head>
+<body onload="offlinedetect()">
+<a href="index.html"><img class="logo" src="assets/logo.svg" alt="logo"></a>
+<p id="NameShow" class="Heading"></p>
+<p class="subHeading">Welcome to foodyC. PWA. V1.0.0</p>
+<div id="offlineDetect" class="offlineDetect">Check Your Internet Conncetion!</div>
+<!-- Block1 -->
+<div class="socialStat"><h3>Our Social Media stat</h3>
+		<hr width="75%" align="left" color="#75ffe8" size="5px">
+		<p>3K Active Users</p>
+		<hr width="81%" align="left" color="#ff758c" size="5px">
+		<p>+207% New Posts</p>
+		<hr width="52%" align="left" color="#75ffa3" size="5px">
+		<p>+78% New Likes</p>
+			<div class="socialMedia">
+	<i id="smA" class="fab fa-youtube"></i>
+	<i id="smB" class="fas fa-users"></i>
+	<i id="smC" class="fab fa-facebook-square"></i>
+	<i id="smD" class="fab fa-instagram"></i>
+	<i id="smE" class="fab fa-whatsapp"></i>
+	<i id="smF" class="fab fa-google"></i>
+	<i id="smG" class="fas fa-at"></i>
+	<i id="smH" class="fas fa-phone-alt"></i>
+	</div>
+</div>
+<!-- Main block with grid -->
+<div class="wrapper">
+<!-- BLOCK HERE -->
+	<div><i class="fas fa-hamburger fa-5x"></i>
+		<div><h3>Recipies</h3>
+		<p>Check out Latest Recipies here</p></div>
+		<i style="color: #75d1ff;" id="arrowA" class="fas fa-chevron-right"></i>
+	</div>
+<!-- BLOCK HERE -->
+	<div><i class="fas fa-search-location fa-5x"></i>
+		<div><h3>Reviews</h3>
+		<p>Thinking about Resturant visits?<br>First read our Reviews here</p></div>
+		<i style="color: #75d1ff;" id="arrowB" class="fas fa-chevron-right"></i>
+	</div>
+<!-- BLOCK HERE -->
+	<div><i class="fas fa-medal fa-5x"></i>
+		<div><h3>Contests</h3>
+		<p>Check out results and informations related to all new Contests here</p></div>
+		<i style="color: #75d1ff;" id="arrowC" class="fas fa-chevron-right"></i>
+	</div>
+<!-- BLOCK HERE -->
+	<div><i class="fas fa-quote-left fa-5x"></i>
+		<div><h3>Have something to post?</h3>
+		<p>Check out our social media here</p></div>
+		<i style="color: #75d1ff;" id="arrowD" class="fas fa-chevron-right"></i>
+	</div>
+<!-- BLOCK HERE -->	
+		<div><i class="fas fa-lightbulb fa-5x"></i>
+			<div><h3>Learn about us</h3>
+		<p>Learn more about us, feel free to contact us</p></div>
+		<a href="About.html"><i style="color: #75d1ff;" id="arrowE" class="fas fa-chevron-right"></i></a>		
+	</div>
+<!-- BLOCK HERE -->	
+		<div><i class="fas fa-rupee-sign fa-5x"></i>
+			<div><h3>Donate</h3>
+		<p>Consider Donating. Help us imporve and grow.</p>
+		<a id="arrowF" style="text-decoration: none; color: black" href="https://pages.razorpay.com/foodycdonate"><p class="donateButton">Donate Now</p></a>
+		</div>
+		<a href="https://pages.razorpay.com/foodycdonate"><i style="color: #75d1ff;" id="arrowG" class="fas fa-chevron-right"></i></a>
+	</div>
+<!-- BLOCK HERE -->	
+</div>
+		
+<center>
+<div id="nameBox">
+	<hr width="81%" size="1px" style="border: dashed #75ffe8;">
+<input class="inputF" id="firstName" type="text" name="name" placeholder="Update Your Name">
+<button class="inputB" onclick="store()" type="submit">ENTER</button>
+</div>
+</center>
+		<hr width="81%" size="1px" style="border: dashed #75ffe8;">
+
+<!-- WRITE TO US -->
+<div id="smI" class="writeToUs">
+	<center>
+	<div style="display:none;" class="alert">Your message has been sent</div>
+	<div>
+	<form id="contactForm">	
+	<legend>Write to foodyC.</legend>	
+	<input type="text" name="name" placeholder="Name" id="name" required>
+	<br>
+	<br>
+	<input type="email" name="email" placeholder="Email" id="email" required>
+<!-- 	<input type="text" name="rply" placeholder="leave a rply" id="rply"> -->
+	<br>
+	<br>
+	<textarea name="rply" placeholder="leave a reply" id="rply" required></textarea>
+	<br>
+<br>
+	<button id="btnSubmit" type="submit">Submit</button>
+	</form>
+	</div>
+	</center>
+</div>
+
+<!-- WRITE TO US -->
+		
+<div class="footer">
+	<p>foodyC. PWA, 2020</p>
+</div>
+</body>
+<script  type="text/javascript">
+  function store(){
+
+     var Name= document.getElementById("firstName");
+     localStorage.setItem("firstName", Name.value);
+     document.location.reload(true);
+     document.body.scrollTop = 0; // For Safari
+     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    if (localStorage.getItem("firstName")==null) 
+    {
+    	document.getElementById("NameShow").innerHTML = 'Hey' + " foody";
+    	document.getElementById("nameBox").style.display = "block";
+    }
+
+    else{
+    	var str = localStorage.getItem("firstName");
+    	document.getElementById("NameShow").innerHTML = 'Hey ' + str.split(" ", 1);
+    	document.getElementById("nameBox").style.display = "none";
+    }
+    // document.getElementById("NameShow").innerHTML = 'Hey ' + localStorage.getItem("firstName");
+</script>
+<script>
+function offlinedetect() {
+  var x = navigator.onLine;
+  if (x == true) {
+  document.getElementById("offlineDetect").style.display = "none";
+  document.getElementById("arrowA").style.display = "block";
+  document.getElementById("arrowB").style.display = "block";
+  document.getElementById("arrowC").style.display = "block";
+  document.getElementById("arrowD").style.display = "block";
+  document.getElementById("arrowE").style.display = "block";
+  document.getElementById("arrowF").style.display = "block";
+  document.getElementById("arrowG").style.display = "block";
+  document.getElementById("smA").style.display = "block";
+  document.getElementById("smB").style.display = "block";
+  document.getElementById("smC").style.display = "block";
+  document.getElementById("smD").style.display = "block";
+  document.getElementById("smE").style.display = "block";
+  document.getElementById("smF").style.display = "block";
+  document.getElementById("smG").style.display = "block";
+  document.getElementById("smH").style.display = "block";
+  document.getElementById("smI").style.display = "block";  
+  
+}
+else{
+	document.getElementById("offlineDetect").style.display = "block";
+	document.getElementById("arrowA").style.display = "none";
+	document.getElementById("arrowB").style.display = "none";
+	document.getElementById("arrowC").style.display = "none";
+	document.getElementById("arrowD").style.display = "none";
+	document.getElementById("arrowE").style.display = "none";
+	document.getElementById("arrowF").style.display = "none";
+	document.getElementById("arrowG").style.display = "none";
+	document.getElementById("smA").style.display = "none";
+	document.getElementById("smB").style.display = "none";
+	document.getElementById("smC").style.display = "none";
+	document.getElementById("smD").style.display = "none";
+	document.getElementById("smE").style.display = "none";
+	document.getElementById("smF").style.display = "none";
+    document.getElementById("smG").style.display = "none";
+    document.getElementById("smH").style.display = "none";
+    document.getElementById("smI").style.display = "none";
+
+}
+}
+window.setInterval(function(){
+       /// call your function here
+      offlinedetect();
+}, 1000); 
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/titas.js');
+}
+</script>
+<script type="text/javascript" src="main1.js"></script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<style type="text/css">
+		input, button{
+			padding: 7px;
+			height: 40px;
+		}
+
+		fieldset{
+			margin-bottom: 20px;
+		}
+	</style>
+<fieldset>
+	<legend>Insert Data</legend>
+	<input type="text" id="inpKey" placeholder="enter key...">
+	<input type="text" id="inpValue" placeholder="enter Value...">
+	<button type="button" id="btnInsert">Insert Data</button>
+</fieldset>
+
+<fieldset>
+	<legend>Local Storage</legend>
+	<div id="lsOutput"></div>
+</fieldset>
+
+<script>
+const inpKey = document.getElementById("inpKey");
+const inpValue = document.getElementById("inpvalue");
+const btnInsert = document.getElementById("btnInsert");
+const lsOutput = document.getElementById("lsOutput");
+
+btnInsert.onClick = function () {
+	const key = inpKey.Value;
+	const value = inpValue.Value;
+	console.log(key);
+	console.log(value);
+};
+
+</script>
+
+</body>
+
+</html>

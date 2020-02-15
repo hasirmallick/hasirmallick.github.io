@@ -1,0 +1,84 @@
+.wrapper >div{
+	background: #eee;
+	padding: 20px;
+}
+
+.wrapper > div:nth-child(odd){
+	background-color: #ddd;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns:repeat(3,1fr);
+	grid-gap: 20px;
+	
+}
+
+.oneT{
+grid-column: 1/3;
+}
+
+.twoT{
+	grid-column: 1/3;
+}
+
+/*SERACH BAR*/
+  #searchbar{ 
+     margin-left: 15%; 
+     padding:15px; 
+     border-radius: 10px; 
+   } 
+ 
+   input[type=text] { 
+      width: 50%; 
+      -webkit-transition: width 0.15s ease-in-out; 
+      transition: width 0.15s ease-in-out; 
+   } 
+ 
+   /* When the input field gets focus, 
+        change its width to 100% */
+   input[type=text]:focus { 
+     width: 70%; 
+   } 
+ 
+  #list{ 
+  	display: none;
+  	background: cyan;
+    font-size:  1.5em; 
+    margin-left: 90px; 
+   } 
+ 
+.foods{ 
+   display: list-item;     
+  }
+
+ /*SERACH BAR*/
+
+@media screen And (max-width: 768px){
+	.wrapper >div{
+	background: red;
+	padding: 20px;
+	}
+.wrapper > div:nth-child(odd){
+	background-color: blue;
+}
+
+}
+
+@media screen And (min-width: 900px){
+	.wrapper >div{
+	background: green;
+	padding: 20px;
+	}
+.wrapper > div:nth-child(odd){
+	background-color: yellow;
+}
+
+}
+
+@media print{
+	.wrapper >div{
+	display: none;
+	}
+
+}
