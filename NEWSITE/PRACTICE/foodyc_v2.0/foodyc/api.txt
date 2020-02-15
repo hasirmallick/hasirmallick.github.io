@@ -1,0 +1,25 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+
+<script>
+   // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA6lAnrX_QXvKtPf24I6jCnCArGpKn0JEI",
+    authDomain: "foodyc-b964b.firebaseapp.com",
+    databaseURL: "https://foodyc-b964b.firebaseio.com",
+    projectId: "foodyc-b964b",
+    storageBucket: "foodyc-b964b.appspot.com",
+    messagingSenderId: "250975059042",
+    appId: "1:250975059042:web:ed714e45d5c4a2bc89653b",
+    measurementId: "G-L5TH0TDRME"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+https://console.firebase.google.com/u/3/project/foodyc-b964b/database/foodyc-b964b/data~2F
